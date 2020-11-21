@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --hot --open --port $PORT",
-    "build": "npm i -dev && webpack --mode production",
-    "heroku-postbuild": "npm build",
+    "start": "node server.js",
+    "build": "webpack",
+    "heroku-postbuild": "ng build --prod",
     "dev": "nodemon"
   },
   "author": "mauriciocordeiro",
@@ -17,8 +17,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongodb": "^3.3.3",
-    "mongoose": "^5.7.5",
-    "webpack-dev-server": "^3.11.0"
+    "mongoose": "^5.7.5"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
