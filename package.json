@@ -5,13 +5,13 @@
   "main": "server.js",
   "engines": {
     "node": "10.x",
-    "npm":"6.x"
+    "npm": "6.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "build": "webpack",
-    "heroku-postbuild": "ng build --prod",
+    "heroku-postbuild": "npm run build --prod",
     "dev": "nodemon"
   },
   "author": "mauriciocordeiro",
