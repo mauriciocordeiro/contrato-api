@@ -1,5 +1,5 @@
 {
-  "name": "contrato-manager",
+  "name": "contrato-api",
   "version": "1.0.0",
   "description": "Controle de contratos do IFBA",
   "main": "server.js",
@@ -9,7 +9,7 @@
     "dev": "nodemon"
   },
   "author": "mauriciocordeiro",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

@@ -1,0 +1,63 @@
+{
+	"empresa": {
+		"_id": "ObjectId",
+		"cnpj": "String",
+		"razaoSocial": "String",
+		"nomeFantasia": "String",
+		"email": "String",
+		"endereco": {
+			"rua": "String",
+			"numero": "Integer",
+			"bairro": "String",
+			"cidade": "String",
+			"uf": "String"
+		},
+		"telefones": [
+			{
+				"ddd": "String",
+				"telefone": "String"
+			}
+		]
+	},
+	"contrato": {
+		"_id": "ObjectId",
+		"_idEmpresa": "ObjectId",
+		"numero": "String",
+		"copiaContrato": "String",
+		"tipoContrato": "Integer",
+		"prestacao": "Integer",
+		"statusContrato": "Integer",
+		"valorContrato": "Double",
+		"dataCelebracaoContrato": "Date",
+		"dataFinalizacaoContrato": "Date",
+		"observacoesContrato": "String",
+		"aditivo": [
+			{
+				"copiaContratoAditivo": "String",
+				"valorContratoAditivo": "Double",
+				"dataRenovacao": "Date",
+				"dataVencimento": "Date",
+				"observacoes": "String"
+			}
+		],
+		"conta": [
+			{
+				"copiaConta": "String",
+				"tipoConta": "Integer",
+				"statusConta": "Integer",
+				"dataVencimentoConta": "Date",
+				"dataRecebimentoSetor": "Date",
+				"dataEnvioDof": "Date",
+				"valorConta": "Double",
+				"observacoesConta": "String",
+				"pagamento": [
+					{
+						"dataPagamentoConta": "Date",
+						"valorPago": "Double",
+						"taxaJuros": "Double"
+					}
+				]
+			}
+		]
+	}
+}

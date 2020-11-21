@@ -5,7 +5,7 @@ let express = require('express'),
     bodyParser = require('body-parser'),
     dataBaseConfig = require('./database/db')
 
-// Conectando mongoDB
+// MongoDB ====================================================================
 mongoose.Promise = global.Promise
 mongoose.connect(dataBaseConfig.db, {
     useNewUrlParser: true
@@ -18,7 +18,6 @@ mongoose.connect(dataBaseConfig.db, {
 )
 
 // ROUTES =====================================================================
-// ============================================================================
 const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -30,22 +29,24 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
     next()
 })
-// app.use(express.static(path.join(__dirname, 'dist/contrato-manager')))
-// app.use('/', express.static(path.join(__dirname, 'dist/contrato-manager')))
-// app.use('/*', express.static(path.join(__dirname, 'dist/contrato-manager/*')))
 
 // contrato -------------------------------------------------------------------
-const contratoRoute = require('./routes/contrato.route')
-app.use('/contratos', contratoRoute)
+const contratoController = require('./controller/contrato.controller')
+app.use('/contratos', contratoController)
 // ----------------------------------------------------------------------------
 // empresa --------------------------------------------------------------------
-const empresaRoute = require('./routes/empresa.route')
-app.use('/empresas', empresaRoute)
+const empresaController = require('./controller/empresa.controller')
+app.use('/empresas', empresaController)
+// ----------------------------------------------------------------------------
+
+// modelo ---------------------------------------------------------------------
+const modelController = require('./controller/model.controller')
+app.use('/model', modelController)
 // ----------------------------------------------------------------------------
 // ============================================================================
 
 // Create port
-const port = process.env.PORT || 4000
+const port = 3000
 const server = app.listen(port, () => {
     console.log('Connected to port ' + port)
 })
