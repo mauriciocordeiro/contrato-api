@@ -44,12 +44,9 @@ app.use(function (err, req, res, next) {
 
 // SERVER =====================================================================
 var port = process.env.PORT || 3000;
-const http = require('http')
-http.createServer(function(req, res){ 
-    res.writeHead(200,{'Content-type':'text/plain'}); 
-    res.end("O pai tá on!"); 
-}).listen(port);
-
+const server = app.listen(port, () => {
+    console.log('Server is up!')
+})
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
