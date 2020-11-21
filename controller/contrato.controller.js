@@ -1,12 +1,12 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const contratoRoute = express.Router()
+const contratoController = express.Router()
 
 // Contrato model
 let Contrato = require('../model/Contrato')
 
 // Create Contrato
-contratoRoute.route('/').post((req, res, next) => {
+contratoController.route('/').post((req, res, next) => {
     let contrato = req.body
     contrato._id = new mongoose.Types.ObjectId()
     
@@ -20,14 +20,7 @@ contratoRoute.route('/').post((req, res, next) => {
 })
 
 // Retrieve contrato
-contratoRoute.route('/').get((req, res) => {
-    // Contrato.find((error, data) => {
-    //     if (error) {
-    //         return next(error)
-    //     } else {
-    //         res.json(data)
-    //     }
-    // })
+contratoController.route('/').get((req, res) => {
     Contrato.aggregate([
         {
             $lookup: {
@@ -44,15 +37,7 @@ contratoRoute.route('/').get((req, res) => {
 })
 
 // Retrieve um contrato
-contratoRoute.route('/:id').get((req, res) => {
-    // Contrato.findById(req.params.id, (error, data) => {
-    //     if (error) {
-    //         return next(error)
-    //     } else {
-    //         res.json(data)
-    //     }
-    // })
-
+contratoController.route('/:id').get((req, res) => {
     Contrato.aggregate([
         { 
             $match: { "_id": mongoose.Types.ObjectId(req.params.id) } 
@@ -72,7 +57,7 @@ contratoRoute.route('/:id').get((req, res) => {
 })
 
 // Update contrato
-contratoRoute.route('/:id').put((req, res, next) => {
+contratoController.route('/:id').put((req, res, next) => {
     Contrato.findByIdAndUpdate(mongoose.Types.ObjectId(req.params.id), {
         $set: req.body
     }, (error, data) => {
@@ -87,7 +72,7 @@ contratoRoute.route('/:id').put((req, res, next) => {
 })
 
 // Delete contrato
-contratoRoute.route('/:id').delete((req, res, next) => {
+contratoController.route('/:id').delete((req, res, next) => {
     Contrato.findByIdAndRemove(mongoose.Types.ObjectId(req.params.id), (error, data) => {
         if (error) {
             return next(error)
@@ -99,4 +84,4 @@ contratoRoute.route('/:id').delete((req, res, next) => {
     })
 })
 
-module.exports = contratoRoute
+module.exports = contratoController

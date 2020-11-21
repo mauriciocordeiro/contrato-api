@@ -1,13 +1,13 @@
 const express = require('express')
 const mongoose = require('mongoose')
 // const app = express()
-const empresaRoute = express.Router()
+const empresaController = express.Router()
 
 // Empresa model
 let Empresa = require('../model/Empresa')
 
 // Create Empresa
-empresaRoute.route('/').post((req, res, next) => {
+empresaController.route('/').post((req, res, next) => {
     let empresa = req.body
     empresa._id = new mongoose.Types.ObjectId()
 
@@ -22,7 +22,7 @@ empresaRoute.route('/').post((req, res, next) => {
 })
 
 // Get all empresa
-empresaRoute.route('/').get((req, res) => {
+empresaController.route('/').get((req, res) => {
     Empresa.find((error, data) => {
         if (error) {
             console.log(error)
@@ -34,7 +34,7 @@ empresaRoute.route('/').get((req, res) => {
 })
 
 // Get single empresa
-empresaRoute.route('/:id').get((req, res) => {
+empresaController.route('/:id').get((req, res) => {
     Empresa.findById(req.params.id, (error, data) => {
         if (error) {
             return next(error)
@@ -46,7 +46,7 @@ empresaRoute.route('/:id').get((req, res) => {
 
 
 // Update empresa
-empresaRoute.route('/:id').put((req, res, next) => {
+empresaController.route('/:id').put((req, res, next) => {
     Empresa.findByIdAndUpdate(mongoose.Types.ObjectId(req.params.id), {
         $set: req.body
     }, (error, data) => {
@@ -61,7 +61,7 @@ empresaRoute.route('/:id').put((req, res, next) => {
 })
 
 // Delete empresa
-empresaRoute.route('/:id').delete((req, res, next) => {
+empresaController.route('/:id').delete((req, res, next) => {
     Empresa.findByIdAndRemove(mongoose.Types.ObjectId(req.params.id), (error, data) => {
         if (error) {
             return next(error)
@@ -73,4 +73,4 @@ empresaRoute.route('/:id').delete((req, res, next) => {
     })
 })
 
-module.exports = empresaRoute
+module.exports = empresaController
