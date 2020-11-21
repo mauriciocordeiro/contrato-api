@@ -43,9 +43,12 @@ app.use(function (err, req, res, next) {
 // ============================================================================
 
 // SERVER =====================================================================
-const server = app.listen(3000, () => {
-    console.log('Server is up!')
-})
+var port = process.env.PORT || 3000;
+http.createServer(function(req, res){ 
+    res.writeHead(200,{'Content-type':'text/plain'}); 
+    res.end("A api tá on!"); 
+}).listen(port); 
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: false
