@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Controle de contratos do IFBA",
   "main": "server.js",
+  "engines": {
+    "node": "10.x",
+    "npm":"6.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
