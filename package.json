@@ -5,8 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "nodemon"
+    "start": "webpack-dev-server --mode development --hot --open --port $PORT",
+    "dev": "nodemon",
+    "build": "npm i -dev && webpack --mode production",
+    "heroku-postbuild": "npm build"
   },
   "author": "mauriciocordeiro",
   "license": "MIT",
