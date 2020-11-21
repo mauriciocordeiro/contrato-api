@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --hot --open --port $PORT",
+    "start": "webpack-dev-server --mode development --hot --open --port 3000",
     "dev": "nodemon",
     "build": "npm i -dev && webpack --mode production",
     "heroku-postbuild": "npm build"
