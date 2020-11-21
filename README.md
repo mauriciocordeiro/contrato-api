@@ -1,5 +1,7 @@
 # contrato-api
 
+![Node.js CI](https://github.com/mauriciocordeiro/contrato-api/workflows/Node.js%20CI/badge.svg)
+
 API Node.js para gestão de contratos com MongoDB
 
 ## Modelo de dados
