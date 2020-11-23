@@ -27,18 +27,9 @@ mongoose.connect(dataBaseConfig.db, {
 // ============================================================================
 
 // ROUTES =====================================================================
-// contrato -------------------------------------------------------------------
-const contratoController = require('./src/controllers/contrato.controller')
-app.use('/contratos', contratoController)
-// ----------------------------------------------------------------------------
-// empresa --------------------------------------------------------------------
-const empresaController = require('./src/controllers/empresa.controller')
-app.use('/empresas', empresaController)
-// ----------------------------------------------------------------------------
-// modelo ---------------------------------------------------------------------
-const modelController = require('./src/controllers/model.controller')
-app.use('/models', modelController)
-// ----------------------------------------------------------------------------
+app.use('/empresas', require('./src/routes/empresa.routes'))
+app.use('/contratos', require('./src/routes/contrato.routes'))
+app.use('/models', require('./src/routes/model.routes'))
 // ============================================================================
 
 // ERROR HANDLER ==============================================================

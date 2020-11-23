@@ -1,4 +1,3 @@
-const { Int32 } = require('mongodb');
 const mongoose = require('mongoose');
 const Pagamento = require('./Pagamento');
 const Schema = mongoose.Schema;
