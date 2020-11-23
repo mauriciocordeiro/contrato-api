@@ -6,6 +6,13 @@ let express = require('express'),
 
 const app = express()
 
+// PARSER =====================================================================
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
+// ============================================================================
+
 // DATABASE ===================================================================
 mongoose.Promise = global.Promise
 mongoose.connect(dataBaseConfig.db, {
@@ -48,10 +55,6 @@ const server = app.listen(port, () => {
     console.log('Server is up!')
 })
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({
-    extended: false
-}))
 app.use(cors())
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*")
