@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const Endereco = require('./Endereco');
+const Telefone = require('./Telefone');
 const Schema = mongoose.Schema;
 
-// Define collection and schema
 let Empresa = new Schema(
     {
         _id: { type: mongoose.Types.ObjectId, required: true },
@@ -9,8 +10,8 @@ let Empresa = new Schema(
         razaoSocial: { type: String, required: true },
         nomeFantasia: { type: String, required: true },
         email: { type: String },
-        endereco: { type: Object },
-        telefones: { type: Array },
+        endereco: Endereco.schema,
+        telefones: [ Telefone.schema ],
         contratos: { type: Array }
     },
     {

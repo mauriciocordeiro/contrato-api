@@ -2,7 +2,7 @@ let express = require('express'),
     mongoose = require('mongoose'),
     cors = require('cors'),
     bodyParser = require('body-parser'),
-    dataBaseConfig = require('./database/db')
+    dataBaseConfig = require('./src/database/db')
 
 const app = express()
 
@@ -28,15 +28,15 @@ mongoose.connect(dataBaseConfig.db, {
 
 // ROUTES =====================================================================
 // contrato -------------------------------------------------------------------
-const contratoController = require('./controller/contrato.controller')
+const contratoController = require('./src/controllers/contrato.controller')
 app.use('/contratos', contratoController)
 // ----------------------------------------------------------------------------
 // empresa --------------------------------------------------------------------
-const empresaController = require('./controller/empresa.controller')
+const empresaController = require('./src/controllers/empresa.controller')
 app.use('/empresas', empresaController)
 // ----------------------------------------------------------------------------
 // modelo ---------------------------------------------------------------------
-const modelController = require('./controller/model.controller')
+const modelController = require('./src/controllers/model.controller')
 app.use('/models', modelController)
 // ----------------------------------------------------------------------------
 // ============================================================================

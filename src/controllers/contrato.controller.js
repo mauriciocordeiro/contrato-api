@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const contratoController = express.Router()
 
 // Contrato model
-let Contrato = require('../model/Contrato')
+let Contrato = require('../models/Contrato')
 
 // Create Contrato
 contratoController.route('/').post((req, res, next) => {

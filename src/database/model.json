@@ -7,7 +7,7 @@
 		"email": "String",
 		"endereco": {
 			"rua": "String",
-			"numero": "Integer",
+			"numero": "String",
 			"bairro": "String",
 			"cidade": "String",
 			"uf": "String"
@@ -24,17 +24,17 @@
 		"_idEmpresa": "ObjectId",
 		"numero": "String",
 		"copiaContrato": "String",
-		"tipoContrato": "Integer",
-		"prestacao": "Integer",
-		"statusContrato": "Integer",
-		"valorContrato": "Double",
+		"tipoContrato": "Number",
+		"prestacao": "Number",
+		"statusContrato": "Number",
+		"valorContrato": "Number",
 		"dataCelebracaoContrato": "Date",
 		"dataFinalizacaoContrato": "Date",
 		"observacoesContrato": "String",
 		"aditivo": [
 			{
 				"copiaContratoAditivo": "String",
-				"valorContratoAditivo": "Double",
+				"valorContratoAditivo": "Number",
 				"dataRenovacao": "Date",
 				"dataVencimento": "Date",
 				"observacoes": "String"
@@ -43,18 +43,18 @@
 		"conta": [
 			{
 				"copiaConta": "String",
-				"tipoConta": "Integer",
-				"statusConta": "Integer",
+				"tipoConta": "Number",
+				"statusConta": "Number",
 				"dataVencimentoConta": "Date",
 				"dataRecebimentoSetor": "Date",
 				"dataEnvioDof": "Date",
-				"valorConta": "Double",
+				"valorConta": "Number",
 				"observacoesConta": "String",
 				"pagamento": [
 					{
 						"dataPagamentoConta": "Date",
-						"valorPago": "Double",
-						"taxaJuros": "Double"
+						"valorPago": "Number",
+						"taxaJuros": "Number"
 					}
 				]
 			}

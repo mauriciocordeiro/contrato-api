@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const empresaController = express.Router()
 
 // Empresa model
-let Empresa = require('../model/Empresa')
+let Empresa = require('../models/Empresa')
 
 // Create Empresa
 empresaController.route('/').post((req, res, next) => {

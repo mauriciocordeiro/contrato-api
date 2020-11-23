@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const Aditivo = require('./Aditivo');
+const Conta = require('./Conta');
+
 function deleteEmpty(v) {
     if (v == null) {
         return undefined;
@@ -22,8 +25,8 @@ let Contrato = new Schema(
         dataCelebracaoContrato: { type: Date, required: true },
         dataFinalizacaoContrato: { type: Date, set: deleteEmpty },
         observacoesContrato: { type: String, set: deleteEmpty },
-        aditivo: { type: Array, set: deleteEmpty },
-        conta: { type: Array, set: deleteEmpty }
+        aditivos: [ Aditivo.schema ],
+        contas: [ Conta.schema ]
     },
     {
         collection: 'contrato'
