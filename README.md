@@ -12,7 +12,7 @@ Consulte [https://contrato-api.herokuapp.com/models](https://contrato-api.heroku
 
 ### _/empresas_
 
-* **GET** `/empresas`
+* **GET** `/empresas` (com paginação de 10 itens por página. Ex.: `/empresas?page=3`)
 * **GET** `/empresas/:id`
 * **POST** `/empresas`
 * **PUT** `/empresas/:id`
