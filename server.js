@@ -2,7 +2,7 @@ let express = require('express'),
     mongoose = require('mongoose'),
     cors = require('cors'),
     bodyParser = require('body-parser'),
-    dataBaseConfig = require('./database/db')
+    dataBaseConfig = require('./src/database/db')
 
 const app = express()
 
@@ -27,18 +27,9 @@ mongoose.connect(dataBaseConfig.db, {
 // ============================================================================
 
 // ROUTES =====================================================================
-// contrato -------------------------------------------------------------------
-const contratoController = require('./controller/contrato.controller')
-app.use('/contratos', contratoController)
-// ----------------------------------------------------------------------------
-// empresa --------------------------------------------------------------------
-const empresaController = require('./controller/empresa.controller')
-app.use('/empresas', empresaController)
-// ----------------------------------------------------------------------------
-// modelo ---------------------------------------------------------------------
-const modelController = require('./controller/model.controller')
-app.use('/models', modelController)
-// ----------------------------------------------------------------------------
+app.use('/empresas', require('./src/routes/empresa.routes'))
+app.use('/contratos', require('./src/routes/contrato.routes'))
+app.use('/models', require('./src/routes/model.routes'))
 // ============================================================================
 
 // ERROR HANDLER ==============================================================
@@ -56,9 +47,4 @@ const server = app.listen(port, () => {
 })
 
 app.use(cors())
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*")
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-    next()
-})
 // ============================================================================
