@@ -9,8 +9,14 @@ module.exports = {
                 if (error)
                     return next(error)
                 else 
-                    return res.json(data.docs)
+                    return res.json(data)
         })
+        // Empresa.find((error, data) => {
+        //     if (error)
+        //         return next(error)
+        //     else
+        //         res.json(data)
+        // })
     },
     get(req, res, next) {
         Empresa.findById(req.params.id, (error, data) => {
