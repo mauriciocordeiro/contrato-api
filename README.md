@@ -12,7 +12,20 @@ Consulte [https://contrato-api.herokuapp.com/models](https://contrato-api.heroku
 
 ### _/empresas_
 
-* **GET** `/empresas` (com paginação de 10 itens por página. Ex.: `/empresas?page=3`)
+* **GET** `/empresas` (com paginação de 10 itens por página)
+_Ex.:_ `/empresas?page=3`
+```json
+{
+    "docs":[
+        _<lista de empresas>_
+    ],
+    "total":50,
+    "limit":10,
+    "page":"3",
+    "pages":5
+}
+```
+
 * **GET** `/empresas/:id`
 * **POST** `/empresas`
 * **PUT** `/empresas/:id`
