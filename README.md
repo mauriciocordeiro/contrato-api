@@ -32,7 +32,9 @@ Consulte [https://contrato-api.herokuapp.com/models](https://contrato-api.heroku
 * **DELETE** `/contratos/:id`
 
 #### Enums
+
 * **contrato**
+
 | Campo            | Valores    | Descrição                                         |
 |------------------|------------|---------------------------------------------------|
 | `tipoContrato`   | [1, 2, 3]  | 1: Licitatório<br>2: Permanente<br>3: Consultoria |
