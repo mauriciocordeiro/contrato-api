@@ -8,4 +8,7 @@ routes.post('/', ContratoController.insert)
 routes.put('/:id', ContratoController.update)
 routes.delete('/:id', ContratoController.delete)
 
+routes.get('/pagamentos', ContratoController.getPagamentos)
+routes.get('/aditivos', ContratoController.getAditivos)
+
 module.exports = routes
