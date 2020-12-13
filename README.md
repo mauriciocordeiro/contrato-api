@@ -12,19 +12,7 @@ Consulte [https://contrato-api.herokuapp.com/models](https://contrato-api.heroku
 
 ### _/empresas_
 
-* **GET** `/empresas` (com paginação de 10 itens por página)
-
-_Ex.:_ `/empresas?page=3`, onde `"docs"` é a lista de resultados
-```json
-{
-    "docs":[ ],
-    "total":50,
-    "limit":10,
-    "page":"3",
-    "pages":5
-}
-```
-
+* **GET** `/empresas`
 * **GET** `/empresas/:id`
 * **POST** `/empresas`
 * **PUT** `/empresas/:id`
@@ -32,11 +20,29 @@ _Ex.:_ `/empresas?page=3`, onde `"docs"` é a lista de resultados
 
 ### _/contratos_
 
-* **GET** `/contratos`
+* **GET** `/contratos`  _(queryParam: `idEmpresa`, `status`, `tipo`, `prestacao`)_
+
 * **GET** `/contratos/:id`
+
+* **GET** `/contratos/pagamentos` _(queryParam: `idEmpresa`)_ <sub>contratos de uma empresa com pagamentos</sub>
+
+* **GET** `/contratos/aditivos` _(queryParam: `idEmpresa`)_ <sub>contratos de uma empresa com aditivos</sub>
+
 * **POST** `/contratos`
+
 * **PUT** `/contratos/:id`
+
 * **DELETE** `/contratos/:id`
+
+#### Enums
+
+* **contrato**
+
+| Campo            | Valores    | Descrição                                         |
+|------------------|------------|---------------------------------------------------|
+| `tipoContrato`   | [1, 2, 3]  | 1: Licitatório<br>2: Permanente<br>3: Consultoria |
+| `statusContrato` | [1, 2, 3]  | 1: Ativo<br>2: Finalizado<br>3: Cancelado         |
+| `prestacao`      | [1, 2]     | 1: Serviço<br>2: Produto                          |
 
 ### _/models_
 

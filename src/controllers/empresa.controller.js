@@ -3,20 +3,20 @@ const Empresa = require('../models/Empresa')
 
 module.exports = {
     getAll(req, res, next) {
-        const { page = 1 } = req.query
-        return Empresa.paginate({}, { page, limit: 10 },
-            (error, data) => {
-                if (error)
-                    return next(error)
-                else 
-                    return res.json(data)
-        })
-        // Empresa.find((error, data) => {
-        //     if (error)
-        //         return next(error)
-        //     else
-        //         res.json(data)
+        // const page = req.query.page || 1
+        // return Empresa.paginate({}, { page, limit: 10 },
+        //     (error, data) => {
+        //         if (error)
+        //             return next(error)
+        //         else 
+        //             return res.json(data)
         // })
+        Empresa.find((error, data) => {
+            if (error)
+                return next(error)
+            else
+                res.json(data)
+        })
     },
     get(req, res, next) {
         Empresa.findById(req.params.id, (error, data) => {

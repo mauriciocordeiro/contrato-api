@@ -12,8 +12,7 @@ let Empresa = new Schema(
         nomeFantasia: { type: String, required: true },
         email: { type: String },
         endereco: Endereco.schema,
-        telefones: [ Telefone.schema ],
-        contratos: { type: Array }
+        telefones: [ Telefone.schema ]
     },
     {
         collection: 'empresa'
