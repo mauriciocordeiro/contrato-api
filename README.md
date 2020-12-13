@@ -20,9 +20,13 @@ Consulte [https://contrato-api.herokuapp.com/models](https://contrato-api.heroku
 
 ### _/contratos_
 
-* **GET** `/contratos`,  _(queryParam: `idEmpresa`, `status`, `tipo`, `prestacao`)_
+* **GET** `/contratos`  _(queryParam: `idEmpresa`, `status`, `tipo`, `prestacao`)_
 
 * **GET** `/contratos/:id`
+
+* **GET** `/contratos/pagamentos` _(queryParam: `idEmpresa`)_ <sub>contratos de uma empresa com pagamentos</sub>
+
+* **GET** `/contratos/aditivos` _(queryParam: `idEmpresa`)_ <sub>contratos de uma empresa com aditivos</sub>
 
 * **POST** `/contratos`
 
