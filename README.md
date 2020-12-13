@@ -33,8 +33,7 @@ _Ex.:_ `/empresas?page=3`, onde `"docs"` é a lista de resultados
 ### _/contratos_
 
 * **GET** `/contratos`
-
- * queryParam: `idEmpresa`, `status`
+> > queryParam: `idEmpresa`, `status`
 
 * **GET** `/contratos/:id`
 
