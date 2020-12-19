@@ -6,10 +6,10 @@ const Schema = mongoose.Schema;
 
 let Empresa = new Schema(
     {
-        _id: { type: mongoose.Types.ObjectId, required: true },
-        cnpj: { type: String, required: true },
-        razaoSocial: { type: String, required: true },
-        nomeFantasia: { type: String, required: true },
+        _id: { type: mongoose.Types.ObjectId, required: false },
+        cnpj: { type: String, required: false },
+        razaoSocial: { type: String, required: false },
+        nomeFantasia: { type: String, required: false },
         email: { type: String },
         endereco: Endereco.schema,
         telefones: [ Telefone.schema ]
