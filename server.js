@@ -6,6 +6,10 @@ let express = require('express'),
 
 const app = express()
 
+// CORS =======================================================================
+app.use(cors())
+// ============================================================================
+
 // PARSER =====================================================================
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -45,6 +49,4 @@ var port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
     console.log('Server is up!')
 })
-
-app.use(cors())
 // ============================================================================
