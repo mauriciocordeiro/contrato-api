@@ -26,15 +26,15 @@ function deleteEmpty(v) {
 // Define collection e schema
 let Contrato = new Schema(
     {
-        _id: { type: mongoose.Types.ObjectId, required: true },
-        _idEmpresa: { type: mongoose.Types.ObjectId, required: true },
-        numero: { type: String, required: true },
+        _id: { type: mongoose.Types.ObjectId, required: false },
+        _idEmpresa: { type: mongoose.Types.ObjectId, required: false },
+        numero: { type: String, required: false },
         copiaContrato: { type: String, set: deleteEmpty },
-        tipoContrato: { type: Number, required: true },
-        prestacao: { type: Number, required: true },
-        statusContrato: { type: Number, required: true },
+        tipoContrato: { type: Number, required: false },
+        prestacao: { type: Number, required: false },
+        statusContrato: { type: Number, required: false },
         valorContrato: { type: Number, set: deleteEmpty },
-        dataCelebracaoContrato: { type: Date, required: true },
+        dataCelebracaoContrato: { type: Date, required: false },
         dataFinalizacaoContrato: { type: Date, set: deleteEmpty },
         observacoesContrato: { type: String, set: deleteEmpty },
         aditivos: [ Aditivo.schema ],
