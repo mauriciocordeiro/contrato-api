@@ -48,7 +48,7 @@ module.exports = {
             {
                 $lookup: {
                     from: "empresa",
-                    localField: "_id_empresa",
+                    localField: "_idEmpresa",
                     foreignField: "_id",
                     as: "empresa"
                 }
