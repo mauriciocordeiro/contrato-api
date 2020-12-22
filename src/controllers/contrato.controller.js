@@ -94,7 +94,7 @@ module.exports = {
         })
     },
     getPagamentos(req, res, next) {
-        Contrato.aggregate(
+        Contrato.aggregate([
             {
                 $lookup: {
                     from: "empresa",
@@ -110,12 +110,12 @@ module.exports = {
                 ] 
             } },
             { $unwind: "$empresa" }
-        ).then(data => {
-            res.json(data[0])
+        ]).then(data => {
+            res.json(data)
         })
     },
     getAditivos(req, res, next) {
-        Contrato.aggregate(
+        Contrato.aggregate([
             {
                 $lookup: {
                     from: "empresa",
@@ -131,8 +131,8 @@ module.exports = {
                 ] 
             } },
             { $unwind: "$empresa" }
-        ).then(data => {
-            res.json(data[0])
+        ]).then(data => {
+            res.json(data)
         })
     }
 }
