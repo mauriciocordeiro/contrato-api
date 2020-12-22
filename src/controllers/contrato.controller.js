@@ -94,7 +94,7 @@ module.exports = {
         })
     },
     getPagamentos(req, res, next) {
-        Contrato.aggregate(
+        Contrato.aggregate([
             {
                 $lookup: {
                     from: "empresa",
@@ -109,13 +109,14 @@ module.exports = {
                     { "contas.pagamentos": { $exists: true } }
                 ] 
             } },
-            { $unwind: "$empresa" }
-        ).then(data => {
-            res.json(data[0])
+            { $unwind: "$empresa" },
+            { $project: { "contas.pagamentos": 1 }}
+        ]).then(data => {
+            res.json(data)
         })
     },
     getAditivos(req, res, next) {
-        Contrato.aggregate(
+        Contrato.aggregate([
             {
                 $lookup: {
                     from: "empresa",
@@ -130,9 +131,10 @@ module.exports = {
                     { "aditivos": { $exists: true } }
                 ] 
             } },
-            { $unwind: "$empresa" }
-        ).then(data => {
-            res.json(data[0])
+            { $unwind: "$empresa" },
+            { $project: { "aditivos": 1} }
+        ]).then(data => {
+            res.json(data)
         })
     }
 }
