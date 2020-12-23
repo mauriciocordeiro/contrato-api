@@ -2,9 +2,6 @@ const express = require('express')
 const routes = express.Router()
 const ContratoController = require('../controllers/contrato.controller')
 
-routes.get('/pagamentos/', ContratoController.getPagamentos)
-routes.get('/aditivos/', ContratoController.getAditivos)
-
 routes.get('/', ContratoController.getAll)
 routes.get('/:id', ContratoController.get)
 routes.post('/', ContratoController.insert)
