@@ -34,6 +34,9 @@ mongoose.connect(dataBaseConfig.db, {
 app.use('/empresas', require('./src/routes/empresa.routes'))
 app.use('/contratos', require('./src/routes/contrato.routes'))
 app.use('/models', require('./src/routes/model.routes'))
+app.use('/pagamentos', require('./src/routes/pagamento.routes'))
+app.use('/aditivos', require('./src/routes/aditivo.routes'))
+
 // ============================================================================
 
 // ERROR HANDLER ==============================================================
