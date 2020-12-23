@@ -109,8 +109,7 @@ module.exports = {
                     { "contas.pagamentos": { $exists: true } }
                 ] 
             } },
-            { $unwind: "$empresa" },
-            { $project: { "contas.pagamentos": 1 } }
+            { $unwind: "$empresa" }
         ]).then(data => {
             res.json(data)
         })
