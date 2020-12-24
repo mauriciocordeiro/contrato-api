@@ -6,7 +6,27 @@ API Node.js para gestão de contratos com MongoDB
 
 ## Modelo de dados
 
+![](docs/er-contrato.jpg)
+
 Consulte [https://contrato-api.herokuapp.com/models](https://contrato-api.herokuapp.com/models) para ver o modelo dos documentos.
+
+## Instalação
+
+### MongoDB
+
+* Baixe e instale a versão mais recente do MongoDB [direto do site](https://www.mongodb.com/try/download/community) ou do [Dockerhub](https://hub.docker.com/_/mongo/).
+
+* A aplicação está preparada para acessar o MongoDB via `localhost:27017`.
+
+### Node.js
+
+* Baixe e instale o [Node.js](https://nodejs.org/en/).
+
+* Execute o comando `npm run start` para iniciar a aplicação (configurada para utilizar a porta 3000)
+
+#### Docker
+
+É possível montar um contêiner Docker desta aplicação a partir do arquivo _docker-compose.yml_ na raíz deste repositório. Para tal, execute o comando `docker-compose up -d`.
 
 ## Serviços
 
