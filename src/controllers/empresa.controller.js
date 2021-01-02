@@ -3,14 +3,6 @@ const Empresa = require('../models/Empresa')
 
 module.exports = {
     getAll(req, res, next) {
-        // const page = req.query.page || 1
-        // return Empresa.paginate({}, { page, limit: 10 },
-        //     (error, data) => {
-        //         if (error)
-        //             return next(error)
-        //         else 
-        //             return res.json(data)
-        // })
         Empresa.find((error, data) => {
             if (error)
                 return next(error)
